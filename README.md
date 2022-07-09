@@ -13,10 +13,16 @@ This is a tutorial/exercise to build **Shopping Cart Page** from [webdevsimplifi
 
 ## Overview
 
+### The challenge
+
 Users should be able to:
 
 - Input one or more items to the cart, saved in local storage.
 - See responsive design on mobile view.
+
+### Screenshot
+
+![shopping cart](./screenshot/wds-shopping-cart-page.png)
 
 ## My process
 
@@ -47,5 +53,18 @@ function useLocalStorage(key, initialValue) {
   }, [key, value]);
 
   return [value, setValue];
+}
+```
+
+Make currency function
+
+```javascript
+const CURRENCY_FORMATER = new Intl.NumberFormat(undefined, {
+  currency: "USD",
+  style: "currency",
+});
+
+function formatCurrency(number: number) {
+  return CURRENCY_FORMATER.format(number);
 }
 ```
